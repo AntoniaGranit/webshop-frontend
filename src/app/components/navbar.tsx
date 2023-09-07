@@ -1,8 +1,23 @@
+import Link from 'next/link';
+
 const NavBar: React.FC = () => {
     return (
-      <main className="flex flex-col items-center justify-between p-24">
-          <h1 className="text-4xl font-bold">Link</h1>
-      </main>
+      <nav>
+      <ul className="flex justify-between items-center p-8">
+        <li>
+          <Link href="/">Home</Link>
+        </li>
+        <li>
+          <Link href="/productlist">Plants</Link>
+        </li>
+        <li>
+          <Link href="/about">About Us</Link>
+        </li>
+        <li>
+          <Link href="/contact">Contact</Link>
+        </li>
+      </ul>
+    </nav>
     )
   }
   

@@ -1,11 +1,11 @@
-"use client";
+'use client';
 import { useState, useEffect } from 'react';
 import { apiUrl } from '../../utils/api';
 import Image from 'next/image';
 import Loading from '../components/Loading';
 import { Plant } from '../../interfaces/Plant';
 
-const AllPlants: React.FC = () => {
+const ProductList: React.FC = () => {
     const [plantList, setPlantList] = useState<Plant[]>([]);
     const [loading, setLoading] = useState(true);
 
@@ -22,7 +22,7 @@ const AllPlants: React.FC = () => {
     if (loading) return <Loading />
 
     return (
-    <div className="p-10 grid grid-cols-5 gap-x-8 gap-y-4 hover:">
+    <div className="p-10 grid grid-cols-5 gap-x-8 gap-y-4 cursor-pointer">
       {plantList.map((singlePlant) => (
         <div key={singlePlant._id}>
             <picture>
@@ -42,4 +42,4 @@ const AllPlants: React.FC = () => {
     )
 }
 
-export default AllPlants
+export default ProductList
