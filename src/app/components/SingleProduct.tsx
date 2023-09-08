@@ -43,7 +43,7 @@ const SingleProduct: React.FC<SingleProductProps> = ({ id }) => {
                 alt={plant.latinname} />
           <p className={`text-2xl font-bold`}> {plant.latinname}</p><br />
           €{plant.price}.00<br />
-          {plant.size}<br />
+          Size: {plant.size}<br />
           {plant.description}
         </div>
     )

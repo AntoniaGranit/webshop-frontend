@@ -26,16 +26,14 @@ const ProductList: React.FC = () => {
     <div className="p-10 grid grid-cols-5 gap-x-8 gap-y-4 cursor-pointer">
       {plantList.map((singlePlant) => (
       <Link key={singlePlant._id} href='/plant/[id]' as={`/plant/${singlePlant._id}`}>
-        <div>
+        <div className="flex-column">
             <Image className="rounded-full"
                 width={200}
                 height={400}
                 src={singlePlant.img}
                 alt={singlePlant.latinname} />
-          <p className={`text-2xl font-bold`}> {singlePlant.latinname}</p><br />
-          €{singlePlant.price}.00<br />
-          {singlePlant.size}<br />
-          {singlePlant.description}
+          <p className={`font-bold`}> {singlePlant.latinname}</p><br />
+          €{singlePlant.price}.00
         </div>
         </Link>
       ))}
