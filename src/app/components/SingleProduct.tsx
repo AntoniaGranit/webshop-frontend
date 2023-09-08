@@ -35,9 +35,9 @@ const SingleProduct: React.FC<SingleProductProps> = ({ id }) => {
     
 
     return (
-    <div className="p-10 grid grid-cols-5 gap-x-8 gap-y-4 cursor-pointer">
+    <div className="p-10 w-80">
             <Image className="rounded-full"
-                width={200}
+                width={400}
                 height={400}
                 src={plant.img}
                 alt={plant.latinname} />

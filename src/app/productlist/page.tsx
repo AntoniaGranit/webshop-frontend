@@ -25,7 +25,7 @@ const ProductList: React.FC = () => {
     return (
     <div className="p-10 grid grid-cols-5 gap-x-8 gap-y-4 cursor-pointer">
       {plantList.map((singlePlant) => (
-      <Link key={singlePlant._id} href='/[id]' as={`/${singlePlant._id}`}>
+      <Link key={singlePlant._id} href='/plant/[id]' as={`/plant/${singlePlant._id}`}>
         <div>
             <Image className="rounded-full"
                 width={200}
