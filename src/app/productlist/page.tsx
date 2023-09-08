@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { apiUrl } from '../../utils/api';
 import Image from 'next/image';
 import Loading from '../components/Loading';
@@ -24,19 +25,19 @@ const ProductList: React.FC = () => {
     return (
     <div className="p-10 grid grid-cols-5 gap-x-8 gap-y-4 cursor-pointer">
       {plantList.map((singlePlant) => (
-        <div key={singlePlant._id}>
-            <picture>
+      <Link key={singlePlant._id} href={`/plant/${singlePlant._id}`}>
+        <div>
             <Image className="rounded-full"
                 width={200}
                 height={400}
                 src={singlePlant.img}
                 alt={singlePlant.latinname} />
-                </picture>
           <p className={`text-2xl font-bold`}> {singlePlant.latinname}</p><br />
           €{singlePlant.price}.00<br />
           {singlePlant.size}<br />
           {singlePlant.description}
         </div>
+        </Link>
       ))}
     </div>
     )
