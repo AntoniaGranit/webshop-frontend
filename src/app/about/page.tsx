@@ -9,7 +9,7 @@ const About: React.FC = () => {
         <p>Our mission is simple: to help you create a greener, more vibrant space that you can call home. We&apos;re committed to providing you with the finest selection of houseplants, expert care tips, and the tools you need to nurture your indoor garden.</p>
         <h2 className="font-bold">What Sets Us Apart</h2>
         <ul className="list-disc">
-        <li><b>Quality Assurance:</b> We handpick each plant to ensure it meets our rigorous quality standards, so you can trust that you're getting the best.</li>
+        <li><b>Quality Assurance:</b> We handpick each plant to ensure it meets our rigorous quality standards, so you can trust that you&apos;re getting the best.</li>
         <li><b>Expert Advice:</b> Our team of plant enthusiasts and horticultural experts is here to answer your questions and provide guidance every step of the way.</li>
         <li><b>Sustainability:</b> We care about the environment and strive to be eco-conscious in all our practices, from packaging to sourcing.</li>
         <li><b>Community:</b> Join our growing community of plant lovers on social media and share your LeafLife journey with us.</li>
