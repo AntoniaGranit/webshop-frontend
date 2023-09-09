@@ -39,8 +39,8 @@ const NavBar: React.FC = () => {
   }, [isNavbarVisible]);
 
     return (
-      <nav className={`navbar ${isNavbarVisible ? 'translate-y-0' : '-translate-y-full'} fixed top-0 w-full bg-white shadow-lg transition-transform duration-300`}>
-      <ul className="flex justify-between items-center p-8">
+      <nav className={`navbar ${isNavbarVisible ? 'translate-y-0' : '-translate-y-full'} fixed top-0 w-full bg-white shadow-lg transition-transform duration-300 h-13`}>
+      <ul className="flex justify-between items-center p-5">
         <li>
           <Link href="/">Home</Link>
         </li>
