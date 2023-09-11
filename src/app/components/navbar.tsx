@@ -1,6 +1,7 @@
 "use client";
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { PottedPlant, UserCircle } from "@phosphor-icons/react";
 
 const NavBar: React.FC = () => {
   const [isNavbarVisible, setIsNavbarVisible] = useState<Boolean>(true);
@@ -9,9 +10,9 @@ const NavBar: React.FC = () => {
 
   const debounce = (func: Function, wait: number) => {
     let timeout: NodeJS.Timeout | null;
-    return (...args: any[]) => {
+    return () => {
       clearTimeout(timeout as NodeJS.Timeout);
-      timeout = setTimeout(() => func(...args), wait);
+      timeout = setTimeout(() => func(), wait);
     };
   };
 
@@ -29,29 +30,33 @@ const NavBar: React.FC = () => {
   };
 
   const debouncedHandleScroll = debounce(handleScroll, 10);
-  console.log(isNavbarVisible);
 
   useEffect(() => {
     window.addEventListener('scroll', debouncedHandleScroll);
     return () => {
       window.removeEventListener('scroll', debouncedHandleScroll);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isNavbarVisible]);
 
     return (
-      <nav className={`navbar ${isNavbarVisible ? 'translate-y-0' : '-translate-y-full'} fixed top-0 w-full bg-white shadow-lg transition-transform duration-300 h-13`}>
-      <ul className="flex justify-between items-center p-5">
-        <li>
-          <Link href="/">Home</Link>
+      <nav className={`navbar ${isNavbarVisible ? 'translate-y-0' : '-translate-y-full'}
+      fixed top-0 ml-auto w-full rounded-xl shadow-lg transition-transform duration-300 bg-emerald-200/90`}>
+      <ul className="flex justify-between items-center p-6">
+        <li className="">
+          <Link href="/"><PottedPlant size={30} className="text-emerald-900" /></Link>
         </li>
         <li>
-          <Link href="/productlist">Plants</Link>
+          <Link href="/productlist" className="text-emerald-900 font-mono">Plants</Link>
         </li>
         <li>
-          <Link href="/about">About Us</Link>
+          <Link href="/about" className="text-emerald-900 font-mono">About Us</Link>
         </li>
         <li>
-          <Link href="/contact">Contact</Link>
+          <Link href="/contact" className="text-emerald-900 font-mono">Contact</Link>
+        </li>
+        <li>
+          <UserCircle  size={30} className="text-emerald-900" />
         </li>
       </ul>
     </nav>
