@@ -1,6 +1,6 @@
 const About: React.FC = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className=" w-8/12 justify-between p-32 text-emerald-900">
         <h1 className="text-4xl font-bold">About Us</h1>
         <p>At LeafLife, we&apos;re passionate about bringing the beauty and joy of houseplants into your life. Whether you&apos;re a seasoned plant enthusiast or just starting your green journey, we&apos;re here to make your indoor gardening experience a breeze!</p>
         <h2 className="font-bold">Our Story</h2>

@@ -7,38 +7,39 @@ import Loading from '../components/Loading';
 import { Plant } from '../../interfaces/Plant';
 
 const ProductList: React.FC = () => {
-    const [plantList, setPlantList] = useState<Plant[]>([]);
-    const [loading, setLoading] = useState(true);
+  const [plantList, setPlantList] = useState<Plant[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
-    useEffect(() => {
-      fetch(`${apiUrl}/plants`)
-        .then((response) => response.json())
-        .then((data) => {
-          setPlantList((data.body));
-          console.log(setPlantList);
-          setLoading(false)
-        })
-    }, []);
+  useEffect(() => {
+    fetch(`${apiUrl}/plants`)
+      .then((response) => response.json())
+      .then((data) => {
+        setPlantList(data.body);
+        setLoading(false);
+      });
+  }, []);
 
-    if (loading) return <Loading />
+  if (loading) return <Loading />;
 
-    return (
-    <div className="p-10 grid grid-cols-5 gap-x-8 gap-y-4 cursor-pointer">
+  return (
+    <div className='p-32 grid grid-cols-4 gap-x-8 gap-y-4 cursor-pointer text-emerald-900'>
       {plantList.map((singlePlant) => (
-      <Link key={singlePlant._id} href='/plant/[id]' as={`/plant/${singlePlant._id}`}>
-        <div className="flex-column">
-            <Image className="rounded-full"
-                width={200}
-                height={400}
-                src={singlePlant.img}
-                alt={singlePlant.latinname} />
-          <p className={`font-bold`}> {singlePlant.latinname}</p><br />
-          €{singlePlant.price}.00
-        </div>
+        <Link key={singlePlant._id} href='/plant/[id]' as={`/plant/${singlePlant._id}`}>
+          <div className='flex-column justify-between'>
+            <Image
+              className='rounded-xl'
+              width={200}
+              height={400}
+              src={singlePlant.img}
+              alt={singlePlant.latinname}
+            />
+            <p className={``}> {singlePlant.latinname}</p>
+            <p className={'text-sm'}>€{singlePlant.price}.00</p>
+          </div>
         </Link>
       ))}
     </div>
-    )
-}
+  );
+};
 
-export default ProductList
+export default ProductList;
