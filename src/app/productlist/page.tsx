@@ -22,19 +22,19 @@ const ProductList: React.FC = () => {
   if (loading) return <Loading />;
 
   return (
-    <div className='p-32 grid grid-cols-4 gap-x-8 gap-y-4 cursor-pointer text-emerald-900'>
+    <div className='p-32 grid grid-cols-4 gap-x-8 gap-y-12 cursor-pointer text-emerald-900'>
       {plantList.map((singlePlant) => (
         <Link key={singlePlant._id} href='/plant/[id]' as={`/plant/${singlePlant._id}`}>
           <div className='flex-column justify-between'>
             <Image
-              className='rounded-xl'
+              className='rounded-xl pb-2'
               width={200}
               height={400}
               src={singlePlant.img}
               alt={singlePlant.latinname}
             />
-            <p className={``}> {singlePlant.latinname}</p>
-            <p className={'text-sm'}>€{singlePlant.price}.00</p>
+            <p className={`pb-2 text-slate-800`}> {singlePlant.latinname}</p>
+            <p className={'text-sm font-bold text-slate-800'}>€{singlePlant.price}.00</p>
           </div>
         </Link>
       ))}

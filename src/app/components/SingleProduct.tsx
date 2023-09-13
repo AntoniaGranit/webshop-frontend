@@ -29,7 +29,7 @@ const SingleProduct: React.FC<SingleProductProps> = ({ id }) => {
   if (loading) return <Loading />;
 
   if (!plant) {
-    // Handle the case where the plant is not found
+    // If the plant is not found:
     return (
       <div>
         <p>Plant not found.</p>
@@ -38,15 +38,28 @@ const SingleProduct: React.FC<SingleProductProps> = ({ id }) => {
   }
 
   return (
-    <div className='p-10 w-80'>
-      <Image className='rounded-l' width={400} height={400} src={plant.img} alt={plant.latinname} />
-      <p className={`text-2xl font-bold`}> {plant.latinname}</p>
-      <br />€{plant.price}.00
-      <br />
-      Size: {plant.size}
-      <br />
-      {plant.description}
-    </div>
+    <section className='p-32'>
+      <div className='w-9/12 flex'>
+        <div className='flex-column w-9/12'>
+          <Image
+            className='rounded-l'
+            width={400}
+            height={400}
+            src={plant.img}
+            alt={plant.latinname}
+          />
+        </div>
+        <div className='flex-column w-8/12 self-center'>
+          <div className='flex-column pb-4 gap-4'>
+            <p className={`text-2xl font-semibold pb-1`}> {plant.latinname}</p>
+            <div className='border-t border-gray-200 pb-3' />
+            <p>€{plant.price}.00</p>
+            <p>Size: {plant.size.toUpperCase()}</p>
+          </div>
+          <p>{plant.description}</p>
+        </div>
+      </div>
+    </section>
   );
 };
 
