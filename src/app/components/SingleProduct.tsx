@@ -38,9 +38,9 @@ const SingleProduct: React.FC<SingleProductProps> = ({ id }) => {
   }
 
   return (
-    <section className='p-32'>
+    <section className='pl-32 pt-32'>
       <div className='w-9/12 flex'>
-        <div className='flex-column w-9/12'>
+        <div className='flex-column w-8/12'>
           <Image
             className='rounded-l'
             width={400}
@@ -50,24 +50,31 @@ const SingleProduct: React.FC<SingleProductProps> = ({ id }) => {
           />
         </div>
         <div className='flex-column w-8/12 self-center'>
-          <div className='flex-column pb-4 gap-4'>
+          <div className='flex-column pb-4'>
             <p className={`text-2xl font-semibold pb-1`}> {plant.latinname}</p>
-            <div className='border-t border-gray-200 pb-3' />
+            <div className='flex-column border-t border-gray-200 pb-3' />
             <p>€{plant.price}.00</p>
             <p>Size: {plant.size}</p>
           </div>
-          <p>{plant.description}</p>
-          <p>Amount:</p>
-          <select
-            id='amount'
-            name='amount'
-            className='block w-3/12 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:max-w-xs sm:text-sm sm:leading-6'
-          >
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-          </select>
+          <div className='pb-4'>
+            <p>{plant.description}</p>
+          </div>
+          <div className='pb-3'>
+            <p>Amount:</p>
+            <select
+              id='amount'
+              name='amount'
+              className='block w-3/12 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:max-w-xs sm:text-sm sm:leading-6'
+            >
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+          </div>
+          <button className='bg-emerald-500 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded-xl'>
+            Add to cart
+          </button>
         </div>
       </div>
     </section>
