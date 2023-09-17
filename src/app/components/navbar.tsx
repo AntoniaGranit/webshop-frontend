@@ -40,12 +40,10 @@ const NavBar: React.FC = () => {
 
   return (
     <nav
-      className={`navbar ${
-        isNavbarVisible ? 'translate-y-0' : '-translate-y-full'
-      }
-      fixed top-0 ml-auto w-full rounded-xl shadow-lg transition-transform duration-300 bg-emerald-200/90`}
+      className={`navbar ${isNavbarVisible ? 'translate-y-0' : '-translate-y-full'}
+      fixed top-0 h-14 ml-auto w-full shadow-lg transition-transform duration-300 bg-emerald-200/90`}
     >
-      <ul className='flex justify-between items-center p-6'>
+      <ul className='flex justify-between items-center p-3'>
         <li className=''>
           <Link href='/'>
             <PottedPlant size={30} className='text-emerald-900' />
