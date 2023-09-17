@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { apiUrl } from '../../utils/api';
 import Image from 'next/image';
-import Loading from '../components/Loading';
+import ListLoading from '../components/ListLoading';
 import { Plant } from '../../interfaces/Plant';
 
 const ProductList: React.FC = () => {
@@ -19,7 +19,7 @@ const ProductList: React.FC = () => {
       });
   }, []);
 
-  if (loading) return <Loading />;
+  if (loading) return <ListLoading />;
 
   return (
     <section className='p-32'>

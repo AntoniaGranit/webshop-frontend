@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { apiUrl } from '../../utils/api';
 import Image from 'next/image';
-import Loading from '../components/Loading';
+import PlantLoading from '../components/PlantLoading';
 import { Plant } from '../../interfaces/Plant';
 
 interface SingleProductProps {
@@ -26,7 +26,7 @@ const SingleProduct: React.FC<SingleProductProps> = ({ id }) => {
       });
   }, [id]);
 
-  if (loading) return <Loading />;
+  if (loading) return <PlantLoading />;
 
   if (!plant) {
     // If the plant is not found:
