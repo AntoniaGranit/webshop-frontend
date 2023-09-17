@@ -22,7 +22,7 @@ const ProductList: React.FC = () => {
   if (loading) return <ListLoading />;
 
   return (
-    <section className='p-32'>
+    <section className='pt-32 pl-8 pr-8 lg:pl-32 lg:pr-32 '>
       <div className='w-8/12 pb-12'>
         <h1 className='col-span-4 text-4xl font-bold text-slate-800 pb-3'>Our Products</h1>
         <p>
@@ -32,13 +32,13 @@ const ProductList: React.FC = () => {
           today.
         </p>
       </div>
-      <div className='grid grid-cols-4 gap-x-8 gap-y-12 cursor-pointer justify-items-center'>
-        {plantList.map((singlePlant) => (
+      <div className='grid lg:grid-cols-4 sm:grid-cols-2 lg:gap-x-8 sm:gap-x-4 gap-y-12 cursor-pointer justify-items-center'>
+        {plantList.reverse().map((singlePlant) => (
           <Link key={singlePlant._id} href='/plant/[id]' as={`/plant/${singlePlant._id}`}>
             <div className='flex-column justify-between'>
               <Image
                 className='rounded-xl pb-2'
-                width={200}
+                width={300}
                 height={400}
                 src={singlePlant.img}
                 alt={singlePlant.latinname}
